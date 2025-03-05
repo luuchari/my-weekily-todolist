@@ -1,0 +1,7 @@
+{
+  "name": "MytodolistApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

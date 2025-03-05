@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      my Todo list
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button id="open-modal">Add list</ion-button>
+
+ <ion-modal trigger="open-modal" >
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button >cancel</ion-button>
+        </ion-buttons>
+        <ion-title>create my to-do list</ion-title>
+        <ion-buttons slot="end">
+          <ion-button >Confirm</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item>
+        <ion-input
+          label="Enter a list on what to do week 1"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="week 1 list"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Enter a list of what to do week 2"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="week 2"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Enter a list of what to do week 3"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="week 3"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Enter a list of what to do week 4"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="week 4"
+        ></ion-input>
+      </ion-item>
+
+    </ion-content>
+  </ng-template>
+
