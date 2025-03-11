@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      my Todo list
+      My Todo list
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -28,7 +28,17 @@
           label="Enter a list on what to do week 1"
           labelPlacement="stacked"
           type="text"
-          placeholder="week 1 list"
+          placeholder="shopping"
+          [(ngModel)]="shopping"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="budget of the shopping for week 1"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="budget"
+          [(ngModel)]="budget"
         ></ion-input>
       </ion-item>
       <ion-item>
@@ -36,23 +46,17 @@
           label="Enter a list of what to do week 2"
           labelPlacement="stacked"
           type="text"
-          placeholder="week 2"
+          placeholder="coding"
+          [(ngModel)]="coding"
         ></ion-input>
       </ion-item>
       <ion-item>
         <ion-input
-          label="Enter a list of what to do week 3"
+          label="Enter budget of week 2"
           labelPlacement="stacked"
           type="text"
-          placeholder="week 3"
-        ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          label="Enter a list of what to do week 4"
-          labelPlacement="stacked"
-          type="text"
-          placeholder="week 4"
+          placeholder="budget"
+          [(ngModel)]="budget"
         ></ion-input>
       </ion-item>
 

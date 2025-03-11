@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { RefresherCustomEvent,IonHeader, IonToolbar, IonTitle, IonContent,IonButton, IonRefresher, IonRefresherContent, IonList  } from '@ionic/angular/standalone';
 import {IonButtons,IonInput,IonItem,  IonModal,} from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
+import { OverlayEventDetail } from '@ionic/core/components';
+
 
 
 
@@ -20,5 +22,27 @@ import { FormsModule } from '@angular/forms';
     IonToolbar],],
 })
 export class HomePage {
+  @ViewChild(IonModal) modal!: IonModal;
+  shopping:string=""
+  coding:string=""
+  budget:number=0
+
   constructor() {}
+
+  cancel() {
+    this.modal.dismiss(null, 'cancel');
+  }
+
+  confirm() {
+    this.modal.dismiss(this.name, 'confirm');
+  }
+  name(name: any, arg1: string) {
+    throw new Error('Method not implemented.');
+  }
+
+  onWillDismiss(event: CustomEvent<OverlayEventDetail>) {
+    if (event.detail.role === 'confirm') {
+    }
+  }
 }
+
