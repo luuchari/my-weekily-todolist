@@ -1,24 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      My Todo list
-    </ion-title>
+<ion-header [translucent]="true" class="ion-no-boder">
+  <ion-toolbar class="wrapper">
+    <ion-item lines="none">
+      <ion-label>
+        <h1>Hi Users</h1>
+        <ion-text>
+          <p>Manage your to-do list here</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button id="open-modal">Add list</ion-button>
+  <ion-fab>
+    <ion-fab-button id="open-modal">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-card>
 
+  </ion-card>
+
+<br>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+      <ion-label>items</ion-label>
+    </ion-item>
+    <ion-item-options>
+      <ion-item-option>Edit</ion-item-option>
+      <ion-item-option color="danger">Delete</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+
+  <!----model to add-->
  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
   <ng-template>
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-button click="cancel" >cancel</ion-button>
+          
+          <ion-button (click)="cancel()" [strong]="true">cancel</ion-button>
         </ion-buttons>
         <ion-title>create my to-do list</ion-title>
         <ion-buttons slot="end">
-          <ion-button click="Confirm">Confirm</ion-button>
+          <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>

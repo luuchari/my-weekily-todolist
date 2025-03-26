@@ -1,8 +1,12 @@
 import { Component,ViewChild } from '@angular/core';
-import { RefresherCustomEvent,IonHeader, IonToolbar, IonTitle, IonContent,IonButton, IonRefresher, IonRefresherContent, IonList  } from '@ionic/angular/standalone';
-import {IonButtons,IonInput,IonItem,  IonModal,} from '@ionic/angular/standalone';
+import { RefresherCustomEvent,IonHeader, IonToolbar, IonTitle, IonContent,IonButton, IonRefresher, IonRefresherContent,} from '@ionic/angular/standalone';
+import {IonButtons,IonInput,IonModal,} from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { OverlayEventDetail } from '@ionic/core/components';
+import { IonItem, IonLabel, IonItemOption, IonItemOptions,IonList,IonItemSliding,IonText,IonCard,IonFab, IonFabButton, IonIcon,} from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { add } from 'ionicons/icons';
 
 
 
@@ -11,15 +15,19 @@ import { OverlayEventDetail } from '@ionic/core/components';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent,[IonHeader, IonToolbar, IonTitle, IonContent, IonButton, FormsModule, IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonInput,
-    IonModal,
-    IonItem,
-    IonTitle,
-    IonToolbar],],
+  imports: [IonHeader, IonToolbar, IonTitle,IonList, IonContent, IonFab, IonFabButton, IonIcon,
+    IonButton,
+     FormsModule, 
+     IonButtons, 
+     IonInput,
+      IonModal,
+      IonItemSliding,
+      IonLabel,
+      IonItemOption,
+      IonItemOptions,
+      IonText,
+      IonCard,
+      IonItem],
 })
 export class HomePage {
 [x: string]: any;
@@ -27,7 +35,10 @@ export class HomePage {
   shopping:string=""
   coding:string=""
   budget:number=1000
-  constructor() {}
+  list=[]
+  constructor() {
+    addIcons({ add });
+  }
 
   cancel() {
     this.modal.dismiss(null, 'cancel');

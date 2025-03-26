@@ -25,3 +25,25 @@
 #container a {
   text-decoration: none;
 }
+
+ion-header{
+  ion-toobar.wrapper {
+    --background : transparent;
+    ion-item{
+      margin: 1vh 0;
+    }
+    p{
+      margin: 3px;
+      font-size: 1.8rem;
+      color: #9684eb;
+      font-weight: bold;
+    }
+  }
+}
+ion-card{
+  ---background: var(--ion-color-primary);
+  
+  ion-fab-button {
+    --background : #9684eb;
+  }
+}
