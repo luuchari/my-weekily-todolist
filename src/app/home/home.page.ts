@@ -22,11 +22,11 @@ import { OverlayEventDetail } from '@ionic/core/components';
     IonToolbar],],
 })
 export class HomePage {
+[x: string]: any;
   @ViewChild(IonModal) modal!: IonModal;
   shopping:string=""
   coding:string=""
-  budget:number=0
-
+  budget:number=1000
   constructor() {}
 
   cancel() {
@@ -34,7 +34,7 @@ export class HomePage {
   }
 
   confirm() {
-    this.modal.dismiss(this.name, 'confirm');
+    this.modal.dismiss(this.shopping, 'confirm');
   }
   name(name: any, arg1: string) {
     throw new Error('Method not implemented.');
@@ -42,6 +42,7 @@ export class HomePage {
 
   onWillDismiss(event: CustomEvent<OverlayEventDetail>) {
     if (event.detail.role === 'confirm') {
+      console.log(this.shopping, this.budget,this.coding,this.budget)
     }
   }
 }

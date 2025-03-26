@@ -9,16 +9,16 @@
 <ion-content [fullscreen]="true">
   <ion-button id="open-modal">Add list</ion-button>
 
- <ion-modal trigger="open-modal" >
+ <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
   <ng-template>
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-button >cancel</ion-button>
+          <ion-button click="cancel" >cancel</ion-button>
         </ion-buttons>
         <ion-title>create my to-do list</ion-title>
         <ion-buttons slot="end">
-          <ion-button >Confirm</ion-button>
+          <ion-button click="Confirm">Confirm</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
@@ -55,7 +55,7 @@
           label="Enter budget of week 2"
           labelPlacement="stacked"
           type="text"
-          placeholder="budget"
+          placeholder="budget2"
           [(ngModel)]="budget"
         ></ion-input>
       </ion-item>
