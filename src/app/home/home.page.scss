@@ -46,4 +46,20 @@ ion-card{
   ion-fab-button {
     --background : #9684eb;
   }
+  ion-raw{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ion-item{
+    margin: 3.5vh;
+    --background:transparent;
+    ion-label{
+      font-size: 0.7rem;
+    }
+    ion-text{
+      font-size: 2rem;
+      font-weight: 100;
+    }
+  }
 }

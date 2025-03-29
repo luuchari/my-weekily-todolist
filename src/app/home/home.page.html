@@ -12,13 +12,38 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-fab>
-    <ion-fab-button id="open-modal">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-  <ion-card>
 
+  <br>
+  <ion-card>
+   <ion-row>
+    <ion-col>
+      <ion-item lines="none">
+        <ion-label>
+          <p>week</p>
+          <ion-text >1</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item lines="none">
+        <ion-label>
+          <p>week</p>
+          <ion-text>2</ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item lines="none">
+        <ion-fab>
+          <ion-fab-button id="open-modal" size="small">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-item>
+    </ion-col>
+   </ion-row>
   </ion-card>
 
 <br>
@@ -63,7 +88,7 @@
         <ion-input
           label="budget of the shopping for week 1"
           labelPlacement="stacked"
-          type="text"
+          type="number"
           placeholder="budget"
           [(ngModel)]="budget"
         ></ion-input>
@@ -81,7 +106,7 @@
         <ion-input
           label="Enter budget of week 2"
           labelPlacement="stacked"
-          type="text"
+          type="number"
           placeholder="budget2"
           [(ngModel)]="budget"
         ></ion-input>

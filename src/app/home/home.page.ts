@@ -3,7 +3,7 @@ import { RefresherCustomEvent,IonHeader, IonToolbar, IonTitle, IonContent,IonBut
 import {IonButtons,IonInput,IonModal,} from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { OverlayEventDetail } from '@ionic/core/components';
-import { IonItem, IonLabel, IonItemOption, IonItemOptions,IonList,IonItemSliding,IonText,IonCard,IonFab, IonFabButton, IonIcon,} from '@ionic/angular/standalone';
+import { IonItem, IonLabel, IonItemOption, IonItemOptions,IonList,IonItemSliding,IonText,IonCard,IonFab,IonCol,IonRow, IonFabButton, IonIcon,} from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { add } from 'ionicons/icons';
@@ -17,7 +17,8 @@ import { add } from 'ionicons/icons';
   styleUrls: ['home.page.scss'],
   imports: [IonHeader, IonToolbar, IonTitle,IonList, IonContent, IonFab, IonFabButton, IonIcon,
     IonButton,
-     FormsModule, 
+     FormsModule,
+     IonCol,IonRow, 
      IonButtons, 
      IonInput,
       IonModal,
