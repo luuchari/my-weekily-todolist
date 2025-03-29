@@ -12,27 +12,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <br>
   <ion-card>
    <ion-row>
     <ion-col>
       <ion-item lines="none">
         <ion-label>
-          <p>week</p>
-          <ion-text >1</ion-text>
+          <p>To-do List</p>
+          <ion-text color="light">{{lists.length}}</ion-text>
         </ion-label>
       </ion-item>
     </ion-col>
 
-    <ion-col>
-      <ion-item lines="none">
-        <ion-label>
-          <p>week</p>
-          <ion-text>2</ion-text>
-        </ion-label>
-      </ion-item>
-    </ion-col>
 
     <ion-col>
       <ion-item lines="none">
@@ -46,15 +36,20 @@
    </ion-row>
   </ion-card>
 
-<br>
   <ion-list>
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let list of lists">
       <ion-item>
-      <ion-label>items</ion-label>
+        <div>
+          <ion-label>{{list.shopping}}</ion-label>
+          <ion-text color="medium">{{list.id | date:"MM/dd/YY"}}</ion-text>
+        </div>
+    
+      <ion-text slot="end">R{{list.budget}}</ion-text>
+
     </ion-item>
     <ion-item-options>
       <ion-item-option>Edit</ion-item-option>
-      <ion-item-option color="danger">Delete</ion-item-option>
+      <ion-item-option (click)="removeList(list.id)" color="danger">Delete</ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
   </ion-list>
@@ -77,40 +72,21 @@
     <ion-content class="ion-padding">
       <ion-item>
         <ion-input
-          label="Enter a list on what to do week 1"
+          label="Enter a list "
           labelPlacement="stacked"
           type="text"
           placeholder="shopping"
           [(ngModel)]="shopping"
         ></ion-input>
       </ion-item>
-      <ion-item>
         <ion-input
-          label="budget of the shopping for week 1"
+          label="Enter a budget"
           labelPlacement="stacked"
           type="number"
           placeholder="budget"
           [(ngModel)]="budget"
         ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          label="Enter a list of what to do week 2"
-          labelPlacement="stacked"
-          type="text"
-          placeholder="coding"
-          [(ngModel)]="coding"
-        ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          label="Enter budget of week 2"
-          labelPlacement="stacked"
-          type="number"
-          placeholder="budget2"
-          [(ngModel)]="budget"
-        ></ion-input>
-      </ion-item>
+
 
     </ion-content>
   </ng-template>
