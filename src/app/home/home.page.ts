@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { addIcons } from 'ionicons';
 import { add } from 'ionicons/icons';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 
 
@@ -40,7 +41,7 @@ export class HomePage {
   shopping:string=""
   budget:number=0
   lists:any= []
-  constructor(private dataservice:DataService) {
+  constructor(private dataservice:DataService,private router:Router) {
     addIcons({ add });
   }
   ionviewillenter(){
@@ -70,6 +71,10 @@ export class HomePage {
         console.log(this.lists);
       }
     }
+  }
+  viewList(listId: any) {
+    this.router.navigate(['/list-details', listId]);
+    
   }
 }
 

@@ -38,7 +38,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let list of lists">
-      <ion-item>
+      <ion-item (click)="viewList(list.id)">
         <div>
           <ion-label>{{list.shopping}}</ion-label>
           <ion-text color="medium">{{list.id | date:"MM/dd/YY"}}</ion-text>

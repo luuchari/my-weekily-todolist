@@ -13,7 +13,7 @@ export class DataService {
       id: Date.now(),
       shopping,
       budget,
-      
+      items:[],
     };
     this.weekilytodoList.push(newlist);
     return newlist.id;
@@ -24,5 +24,8 @@ export class DataService {
   removeList(listId: number){
     this.weekilytodoList = this.weekilytodoList.filter(list => list.id !== listId);
 
+  }
+  getListById(listId: number){
+    return this.weekilytodoList.find(list => list.id === listId);
   }
 }

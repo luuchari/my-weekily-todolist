@@ -1,13 +1,73 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>list-details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{list.shopping }}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-text color="medium">R{{list.budget}}</ion-text>
+        <p>Budget</p>
+      </ion-col>
+      <ion-col>
+        <ion-text>R 0</ion-text>
+        <p>spent</p>
+      </ion-col>
+
+      <ion-col>
+        <ion-text>R 0</ion-text>
+        <p>Balance</p>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">list-details</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<ion-list>
+
+</ion-list>
+
+<ion-modal trigger="add-model"(willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          
+          <ion-button (click)="cancel()" [strong]="true">cancel</ion-button>
+        </ion-buttons>
+        <ion-title>create my to-do list</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item>
+        <ion-input
+          label="Enter a list "
+          labelPlacement="stacked"
+          type="text"
+          placeholder="shopping"
+          [(ngModel)]="list.shopping"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Enter a budget"
+          labelPlacement="stacked"
+          type="number"
+          placeholder="budget"
+          [(ngModel)]="list.budget"
+        ></ion-input>
+      
+      <ion-fab vertical="bottom" horizontal="end" slot="foxed">
+        <ion-fab-button id ="add-model" color="primary">
+          <ion-icon name ="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+  </ion-content>
+
+  
