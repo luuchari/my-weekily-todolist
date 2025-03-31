@@ -29,45 +29,46 @@
 
 </ion-list>
 
-<ion-modal trigger="add-model"(willDismiss)="onWillDismiss($event)">
-  <ng-template>
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          
-          <ion-button (click)="cancel()" [strong]="true">cancel</ion-button>
-        </ion-buttons>
-        <ion-title>create my to-do list</ion-title>
-        <ion-buttons slot="end">
-          <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <ion-item>
-        <ion-input
-          label="Enter a list "
-          labelPlacement="stacked"
-          type="text"
-          placeholder="shopping"
-          [(ngModel)]="list.shopping"
-        ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input
-          label="Enter a budget"
-          labelPlacement="stacked"
-          type="number"
-          placeholder="budget"
-          [(ngModel)]="list.budget"
-        ></ion-input>
-      
-      <ion-fab vertical="bottom" horizontal="end" slot="foxed">
-        <ion-fab-button id ="add-model" color="primary">
-          <ion-icon name ="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
-    </ion-item>
-  </ion-content>
-
+   
+  <ion-fab vertical="bottom" horizontal = "end" slot="fixed">
+    <ion-fab-button id="add-model" size="small">
+      <ion-icon name ="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-modal trigger="add-model" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            
+            <ion-button (click)="cancel()" [strong]="true">cancel</ion-button>
+          </ion-buttons>
+          <ion-title>create my to-do list</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-input
+            label="Enter a list "
+            labelPlacement="stacked"
+            type="text"
+            placeholder="shopping"
+            
+          ></ion-input>
+        </ion-item>
+          <ion-input
+            label="Enter a budget"
+            labelPlacement="stacked"
+            type="number"
+            placeholder="budget"
+           
+          ></ion-input>
+  
+  
+      </ion-content>
+    </ng-template>
+  
   
